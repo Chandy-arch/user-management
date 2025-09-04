@@ -1,0 +1,27 @@
+server:
+  port: 442
+  servlet:
+    context-path: /user-management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+spring:
+  application:
+    name: user-management
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: password
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
